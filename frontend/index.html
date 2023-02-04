@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Nature</title>
+        <link rel="stylesheet" href="style.css">
+        <style media="screen">
+            #custom-button {
+                padding: 10px;
+                color:azure;
+                background-color: black;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left: 43%;
+                margin-top: 40px;
+            }
+
+            #custom-button:hover {
+                background-color: grey;
+            }
+
+            #upload-button {
+                padding: 10px;
+                color:azure;
+                background-color: black;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            #upload-button:hover {
+                background-color: grey;
+            }
+
+            #custom-text {
+                margin-left: 10px;
+                margin-top: 10%;
+                font-family: sans-serif;
+                color: lightslategrey;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 5%;
+            }
+
+            div {
+                text-align: center;
+                margin-top: 5%;
+            }
+
+        </style> 
+    </head>
+
+    <body>
+        <h1 class="center">
+            NATURE
+        </h1>
+        <input type="file" id="real-file" hidden="hidden" />
+        <button type="button" id="custom-button">CHOOSE A FILE</button>
+        <span id="custom-text">No file selected...</span>
+
+        <!-- <button id="real-upload" hidden="hidden" onclick="">upload button</button> -->
+
+        <div>
+            <button type="button" id="upload-button">UPLOAD</button>
+        </div>
+
+        <div>
+            <img id="imgPreview" src="" alt=""> <!-- alt shows text when image won't show -->
+        </div>
+
+        <script type="text/javascript">
+            const realFileButton = document.getElementById("real-file");
+            const customButton = document.getElementById("custom-button");
+            const customText = document.getElementById("custom-text");
+            //const realUploadButton = document.getElementById("real-upload");
+            const uploadButton = document.getElementById("upload-button");
+
+            customButton.addEventListener("click", function() {
+                //realFileButton.click();
+                
+            });
+
+            uploadButton.addEventListener("click", function() {
+                realUploadButton.click();
+            });
+
+            realFileButton.addEventListener("change", function() {
+                const reader = new FileReader();
+                
+                if (realFileButton.value) {
+                    customText.innerHTML = realFileButton.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+                } else {
+                    customText.innerHTML = "No file selected...";
+                }
+
+                reader.addEventListener("load", () => {
+                    sessionStorage.setItem("recent-image", reader.result);
+                    const recentImageDataUrl = sessionStorage.getItem("recent-image");
+
+                    if (recentImageDataUrl) {
+                        document.querySelector("#imgPreview").setAttribute("src" , recentImageDataUrl);
+                    }
+                });
+
+                reader.readAsDataURL(this.files[0]);
+            });
+
+            /*
+            document.addEventListener("DOMContentLoaded", () => {
+                const recentImageDataUrl = sessionStorage.setItem("recent-image", "");
+
+                if (recentImageDataUrl) {
+                    document.querySelector("#imgPreview").setAttribute("src" , recentImageDataUrl);
+                }
+            });
+            */
+        </script>
+    </body>
+</html>
