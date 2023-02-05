@@ -105,7 +105,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 50vh;
+    height: 30vh;
     font-size: 1.6rem;
   }
 
@@ -486,23 +486,45 @@
 
 @media screen and (max-width: 960px) {
   .background {
-    height: 1600px;
+    height: 1000px;
   }
 
   .background h1 {
     font-size: 2.5rem;
     margin-top: 3rem;
+  }
+
+  .background__content p {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6rem;
+    padding-bottom: 8px;
   }
 }
 
 @media screen and (max-width: 650px) {
   .background {
-    height: 3800px;
+    height: 1110px;
   }
 
   .background h1 {
     font-size: 2.5rem;
     margin-top: 3rem;
+  }
+
+  .background__content p {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6rem;
+    padding-bottom: 8px;
   }
 }
 
@@ -595,7 +617,7 @@
 #custom-text {
   margin-left: 10px;
   margin-top: 10px;
-  color: lightslategrey;
+  color: #EBE3D6;
 }
 
 
