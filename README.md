@@ -35,12 +35,12 @@ Run the backend server locally:
 
 `./gradlew bootRun`
 
-## frontend - HTML/JS/CSS
+## Frontend - HTML/JS/CSS
 
 No dependencies or installations required. Run web application using live server or by opening index.html with a browser.
 
 ## Figma Design
 
-Ideation Whiteboard - https://www.figma.com/file/FI34CUdAHLGskyOHcMlLMU/Whiteboard-Ideation?node-id=0%3A1&t=CzEUq4pvlcvRPYdK-1
+<a href="https://www.figma.com/file/FI34CUdAHLGskyOHcMlLMU/Whiteboard-Ideation?node-id=0%3A1&t=CzEUq4pvlcvRPYdK-1" target="_blank">Ideation Whiteboard</a>
 
-Web App UI Outline - https://www.figma.com/file/2Ickk0dbHW9Y2BWnAW2qUX/Web-App-Pages?node-id=0%3A1&t=ukpGkokekjVg456G-1
+<a href="https://www.figma.com/file/2Ickk0dbHW9Y2BWnAW2qUX/Web-App-Pages?node-id=0%3A1&t=ukpGkokekjVg456G-1" target="_blank">Web App UI Outline</a>
