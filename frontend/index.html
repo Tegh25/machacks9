@@ -1,7 +1,10 @@
+
+
 <html>
-    <head>
+    <head >
         <title>Nature</title>
         <link rel="stylesheet" href="style.css">
+        <script src="./app.js" defer></script>
         <style media="screen">
             #custom-button {
                 padding: 10px;
@@ -69,52 +72,8 @@
             <img id="imgPreview" src="" alt=""> <!-- alt shows text when image won't show -->
         </div>
 
-        <script type="text/javascript">
-            const realFileButton = document.getElementById("real-file");
-            const customButton = document.getElementById("custom-button");
-            const customText = document.getElementById("custom-text");
-            //const realUploadButton = document.getElementById("real-upload");
-            const uploadButton = document.getElementById("upload-button");
+        <div>
 
-            customButton.addEventListener("click", function() {
-                //realFileButton.click();
-                
-            });
-
-            uploadButton.addEventListener("click", function() {
-                realUploadButton.click();
-            });
-
-            realFileButton.addEventListener("change", function() {
-                const reader = new FileReader();
-                
-                if (realFileButton.value) {
-                    customText.innerHTML = realFileButton.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-                } else {
-                    customText.innerHTML = "No file selected...";
-                }
-
-                reader.addEventListener("load", () => {
-                    sessionStorage.setItem("recent-image", reader.result);
-                    const recentImageDataUrl = sessionStorage.getItem("recent-image");
-
-                    if (recentImageDataUrl) {
-                        document.querySelector("#imgPreview").setAttribute("src" , recentImageDataUrl);
-                    }
-                });
-
-                reader.readAsDataURL(this.files[0]);
-            });
-
-            /*
-            document.addEventListener("DOMContentLoaded", () => {
-                const recentImageDataUrl = sessionStorage.setItem("recent-image", "");
-
-                if (recentImageDataUrl) {
-                    document.querySelector("#imgPreview").setAttribute("src" , recentImageDataUrl);
-                }
-            });
-            */
-        </script>
+        </div>
     </body>
 </html>
