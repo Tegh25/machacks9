@@ -356,7 +356,7 @@
         rgba(0, 0, 0, 0) 0%,
         rgba(17, 17, 17, 0.6) 100%
       ),
-      url('/images/pic3.jpg');
+      url('/Images/pic3.jpg');
     background-size: cover;
     position: relative;
     color: #fff;
@@ -372,7 +372,7 @@
         rgba(0, 0, 0, 0) 0%,
         rgba(17, 17, 17, 0.9) 100%
       ),
-      url('/images/pic4.jpg');
+      url('/Images/pic4.jpg');
   }
   
   .services__card h2 {
@@ -485,6 +485,51 @@
         margin-top: 3rem;
     }
  }
+
+ #custom-button {
+  padding: 10px;
+  color:azure;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 43%;
+  margin-top: 40px;
+}
+
+#custom-button:hover {
+  background-color: grey;
+}
+
+#upload-button {
+  padding: 10px;
+  color:azure;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#upload-button:hover {
+  background-color: grey;
+}
+
+#custom-text {
+  margin-left: 10px;
+  margin-top: 10%;
+  font-family: sans-serif;
+  color: lightslategrey;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+div {
+  text-align: center;
+  margin-top: 5%;
+}
 
   /* Footer CSS */
   /* .footer__container {
