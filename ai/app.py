@@ -1,15 +1,16 @@
 from flask import Flask
-import requests
 import classifier
+import os
+import requests
 
 app = Flask(__name__)
 
 # endpoint /statuses/id
-POLLING_ENDPOINT = 'https:example.com/processing'
-RESPONSE_ENDPOINT = 'https:example.com/status/' # append the id to this when responding
+POLLING_ENDPOINT = '127.0.0.1:8080/processing'
+RESPONSE_ENDPOINT = '127.0.0.1:8080/status/' # append the id to this when responding
 
 def poll():
-    request = requests.get(POLLING_ENDPOINT, headers={ 'Accept': 'application/json'})
+    request = requests.get(POLLING_ENDPOINT)
     return request.json()
 
 def respond(animal: str, request_id: int):
@@ -32,3 +33,7 @@ def begin_polling():
                 respond(animal, id)
             except:
                 respond('', id)
+
+if __name__ == '__main__':
+    os.environ['NO_PROXY'] = '127.0.0.1'
+    app.run(threaded=True, port=5000)
