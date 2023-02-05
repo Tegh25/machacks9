@@ -407,7 +407,7 @@
 
 @media screen and (max-width: 960px) {
   .services {
-    height: 1600px;
+    height: 1000px;
   }
 
   .services h1 {
@@ -418,7 +418,7 @@
 
 @media screen and (max-width: 480px) {
   .services {
-    height: 1400px;
+    height: 1000px;
   }
 
   .services h1 {
@@ -430,6 +430,14 @@
   }
 }
 
+.services__imgPrev { 
+  text-align: center;
+}
+
+#imgPreview {
+  max-height: 90%;
+  max-width: 90%;
+}
 
 /* Back Ground informatoion */
 
@@ -453,6 +461,7 @@
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+  margin: 2rem;
   margin-bottom: 5rem;
   font-size: 2.5rem;
 }
@@ -471,9 +480,25 @@
   font-weight: 700;
   color: #fff;
   margin-bottom: 6rem;
+  padding-bottom: 8px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 960px) {
+  .background {
+    height: 1600px;
+  }
+
+  .background h1 {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .background {
+    height: 3800px;
+  }
+
   .background h1 {
     font-size: 2.5rem;
     margin-top: 3rem;
@@ -496,8 +521,31 @@
   margin-top: 40px;
 }
 
+#custom-button:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #0b9707b2;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+#custom-button a {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
+}
+
 #custom-button:hover {
-  background-color: grey;
+  color: #fff;
+}
+
+#custom-button:hover:after {
+  width: 100%;
 }
 
 #upload-button {
@@ -507,15 +555,40 @@
   border: none;
   border-radius: 4px;
   color: #fff;
-  margin-top: 2rem;
+  margin: 2rem;
   cursor: pointer;
   position: relative;
   transition: all 0.35s;
   outline: none;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#upload-button:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #0b9707b2;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+#upload-button a {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
 }
 
 #upload-button:hover {
-  background-color: grey;
+  color: #fff;
+}
+
+#upload-button:hover:after {
+  width: 100%;
 }
 
 #custom-text {
@@ -524,15 +597,7 @@
   color: lightslategrey;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 5%;
-}
 
-div {
-  text-align: center;
-  margin-top: 5%;
-}
 
 /* Footer CSS */
 /* .footer__container {
