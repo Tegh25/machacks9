@@ -11,15 +11,15 @@ uploadButton.addEventListener("click", async function backendApi() {
     //localhost:8080/uploads
     const recentImageDataUrl = sessionStorage.getItem("recent-image");
     //console.log("I am here", recentImageDataUrl);
-    console.log("I am here!", JSON.stringify({
-        image: recentImageDataUrl
-    }));
+    // console.log("I am here!", JSON.stringify({
+    //     image: recentImageDataUrl
+    // }));
     let response = await fetch("http://127.0.0.1:8080/uploads", {
         method: "POST",
         body: {
             image: recentImageDataUrl
         }
-    }, {mode: 'cors'});
+    }, { mode: 'cors' });
 
     if (response.status == 502) {
         // Status 502 is a connection timeout error,
@@ -43,6 +43,20 @@ uploadButton.addEventListener("click", async function backendApi() {
         // Call backendApi() again to get the next message
 
         //await backendApi();
+
+        if (message) {
+            // .then(response => {
+            //     //handle response            
+            //     console.log(response);
+            // })
+            // .then(data => {
+            //     //handle data
+            //     console.log(data);
+            // })
+            //document.getElementById('apiResponse').src=URL.createObjectURL(message);
+            document.getElementById('apiResponseAnimal').innerHTML=message.animal;
+            document.getElementById('apiResponseStatus').innerHTML=message.status;
+        }
     }
 });
 
