@@ -6,8 +6,8 @@ import requests
 app = Flask(__name__)
 
 # endpoint /statuses/id
-POLLING_ENDPOINT = '127.0.0.1:8080/processing'
-RESPONSE_ENDPOINT = '127.0.0.1:8080/status/' # append the id to this when responding
+POLLING_ENDPOINT = 'http://127.0.0.1:8080/processing'
+RESPONSE_ENDPOINT = 'http://127.0.0.1:8080/status/' # append the id to this when responding
 
 def poll():
     request = requests.get(POLLING_ENDPOINT)
