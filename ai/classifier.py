@@ -11,17 +11,29 @@ def setUpModel() -> ImageClassification:
     prediction.loadModel()
     return prediction
 
-if __name__ == '__main__':
+def classifyBase64(model: ImageClassification, b64: str) -> str:
     img_file = path.join(getcwd(), 'image')
     
-    prediction = setUpModel()    
-   
     # classifyImage can't read directly from a decoded base64. 
     # The bandaid fix for this is to save the string as an image file first, 
     # then read it into the function.
     with open(img_file, 'wb+') as fh:
         fh.write(base64.decodebytes(data))
     
-    possibilities, probabilities = prediction.classifyImage(img_file)
+    possibilities = model.classifyImage(img_file, result_count=1)
+    return possibilities[0]
+
+if __name__ == '__main__':
+    
+    model = setUpModel()    
+    img_file = path.join(getcwd(), 'image')
+    
+    # classifyImage can't read directly from a decoded base64. 
+    # The bandaid fix for this is to save the string as an image file first, 
+    # then read it into the function.
+    with open(img_file, 'wb+') as fh:
+        fh.write(base64.decodebytes(data))
+    
+    possibilities, probabilities = prediction.classifyImage(img_file, result_count=1)
     for eachPrediction, eachProbability in zip(possibilities, probabilities):
         print(eachPrediction , " : " , eachProbability)
