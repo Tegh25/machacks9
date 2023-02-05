@@ -16,7 +16,7 @@ def respond(animal: str, request_id: int):
     response = {
         'type': str(animal)
     }
-    requests.post(RESPONSE_ENDPOINT + str(id), json = response) 
+    requests.post(RESPONSE_ENDPOINT + str(request_id), json = response) 
 
 @app.route('/')
 def begin_polling():
