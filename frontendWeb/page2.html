@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nature.ai</title>
+  <link rel="stylesheet" href="stylesTemp.css" />
+  <script src="https://kit.fontawesome.com/3861ffb2a1.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="#" id="navbar__logo"></i>NATURE</a>
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span> <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="#Image-Upload" class="navbar__links">IMAGE UPLOAD</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#bg-section" class="navbar__links">BACKGROUND</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h1>NATURE</h1>
+        <h2>NURTURE</h2>
+        <p>Revolutionizing Education.</p>
+        <button class="main__btn"><a href="#Image-Upload">Upload Image</a></button>
+      </div>
+      <div class="main__img--container">
+        <img id="main__img" src="ImagesFold/FishBowl.svg" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services">
+    <h1 id="Image-Upload">IMAGE UPLOAD</h1>
+
+    <input type="file" id="real-file" hidden="hidden" />
+    <button type="button" id="custom-button"><a>CHOOSE A FILE</a></button>
+    <span id="custom-text">No file selected...</span>
+    <button type="button" id="upload-button"><a>UPLOAD</a></button>
+    <!-- <div>
+      <button type="button" id="upload-button">UPLOAD</button>
+    </div> -->
+    <button id="real-upload" hidden="hidden" onclick="">upload button</button>
+
+    <div class="services__imgPrev">
+      <img id="imgPreview" src="" alt=""> <!-- alt shows text when image won't show -->
+    </div>
+
+    <script src="./app.js"></script>
+  </div>
+  </div>
+
+  <!-- Background Section -->
+  <div class="background">
+    <h1 id="bg-section">BACKGROUND</h1>
+
+    <div class="background__container">
+      <div class="background__content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi natus saepe cupiditate vitae earum rem
+          repellendus soluta ratione, enim laborum, mollitia a consequatur ipsum illo distinctio. Laudantium alias
+          consectetur praesentium nobis quisquam animi? Cupiditate laboriosam impedit laudantium corrupti optio illo.
+          Amet iste voluptate aut dolor ratione libero iure voluptates error magni ut, commodi aspernatur eligendi saepe
+          aliquam beatae! Sit neque, qui consequuntur, quidem magnam atque in voluptas ipsa, rerum praesentium unde
+          mollitia repudiandae laboriosam exercitationem? Commodi aperiam ipsa eaque voluptatibus tenetur esse nulla
+          laborum maxime facilis aut! Ab repellendus omnis labore illum ea ipsa deleniti vel provident, aliquam fugiat
+          pariatur delectus repellat culpa repudiandae vitae laborum qui rem quas exercitationem, sit dicta natus! Ipsam
+          repudiandae nesciunt ipsum dolores totam dicta esse officia perspiciatis quas nihil, quaerat corrupti,
+          assumenda quisquam, odio quod aliquid cum. Nobis obcaecati eligendi dicta, provident libero veritatis beatae
+          culpa odio asperiores molestiae nemo deleniti omnis in tempora odit ea sint eos dolor aperiam doloribus quidem
+          ullam! Rerum, officia sed, suscipit nobis quidem eligendi aperiam hic inventore explicabo ut ullam. Ipsam
+          quidem sint doloribus, quibusdam mollitia libero laborum illo totam eius magnam magni, a obcaecati alias error
+          repellat reprehenderit deserunt fugit et molestiae esse? Velit reprehenderit harum neque!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
