@@ -4,8 +4,8 @@ from os import path, getcwd
 
 def setUpModel() -> ImageClassification:
     prediction = ImageClassification()
-    prediction.setModelTypeAsDenseNet121()
-    prediction.setModelPath(path.join(getcwd(), 'mobilnet_v2-model.pth'))
+    prediction.setModelTypeAsMobileNetV2()
+    prediction.setModelPath(path.join(getcwd(), 'mobilenet_v2-model.pth'))
     prediction.loadModel()
     return prediction
 
