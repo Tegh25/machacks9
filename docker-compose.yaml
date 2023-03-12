@@ -1,0 +1,19 @@
+services:
+  site:
+    build: ./frontendWeb
+    depends_on:
+      - server
+    ports:
+      - "80:80"
+
+  server:
+    build: ./backend
+    ports:
+      - "8080:8080"
+
+  ai:
+    build: ./ai
+    depends_on:
+      - server
+    ports:
+      - "5000:5000"
