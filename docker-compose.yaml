@@ -5,11 +5,15 @@ services:
       - server
     ports:
       - "80:80"
+    volumes:
+      - ./frontendWeb:/frontendWeb
 
   server:
     build: ./backend
     ports:
       - "8080:8080"
+    volumes:
+      - ./backend:/backend
 
   ai:
     build: ./ai
@@ -17,3 +21,5 @@ services:
       - server
     ports:
       - "5000:5000"
+    volumes:
+      - ./frontendWeb:/usr/share/nginx/html
