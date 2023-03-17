@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./frontendWeb:/frontendWeb
+      - ./frontendWeb:/usr/share/nginx/html
 
   server:
     build: ./backend
@@ -22,4 +22,8 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./frontendWeb:/usr/share/nginx/html
+      - ./ai:/ai
+      - pip-packages:/usr/local/lib/python3.9/site-packages
+
+volumes:
+  pip-packages:
