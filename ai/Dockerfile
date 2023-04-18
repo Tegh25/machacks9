@@ -4,9 +4,11 @@ WORKDIR /ai
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-RUN ["pip", "install", "--no-cache-dir", "-r", "requirement.txt"]
 
 COPY . .
 
 EXPOSE 5000
-CMD [ "flask", "run", "--host", "0.0.0.0"]
+RUN  flask run --host 0.0.0.0
+# Flask isn't exposed properly outside of the container, and since the service needs to be started by
+# visiting the site anyway, curling the site is a good work-around.
+CMD [ "curl", "127.0.0.1:5000"] 
