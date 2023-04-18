@@ -1,9 +1,9 @@
 from threading import Thread
 from time import sleep
-from flask import Flask
-import classifier
 import os
+import classifier
 import requests
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ POLLING_ENDPOINT = 'http://127.0.0.1:8080/processing'
 RESPONSE_ENDPOINT = 'http://127.0.0.1:8080/status/' # append the id to this when responding
 
 def poll():
-    request = requests.get(POLLING_ENDPOINT)
+    request = requests.get(POLLING_ENDPOINT, timeout=1000)
     print(request.json())
     return request.json()
 
@@ -20,7 +20,7 @@ def respond(animal: str, request_id: int):
     response = {
         'type': str(animal)
     }
-    requests.post(RESPONSE_ENDPOINT + str(request_id), json = response) 
+    requests.post(RESPONSE_ENDPOINT + str(request_id), json = response, timeout=1000) 
 
 def continuous_poll():
     model = classifier.setUpModel()
@@ -41,7 +41,6 @@ def begin_polling():
     thread = Thread(target=continuous_poll)
     thread.start()
     return 'Polling Started'
-    
 
 if __name__ == '__main__':
     os.environ['NO_PROXY'] = '127.0.0.1'
